@@ -5,6 +5,7 @@ package pm_app;
 service PMApp {
     rpc GetData(AssetDetails) returns (stream DataPoint) {}
     rpc SendData(DataPoint) returns (Empty) {}
+    rpc SaveData(ResultDataPoint) returns (Empty) {}
 }
 
 message AssetDetails {
@@ -14,10 +15,12 @@ message AssetDetails {
 message DataPoint {
     repeated string data = 1;
     int32 id = 2;
+    string settings = 3;
 }
 
 message ResultDataPoint {
-
+    repeated string data = 1;
+    int32 id = 2;
 }
 
 message Success {
