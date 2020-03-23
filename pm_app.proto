@@ -4,7 +4,7 @@ package pm_app;
 
 service PMApp {
     rpc GetData(AssetDetails) returns (stream DataPoint) {}
-    rpc SendData(DataPoint) returns (Empty) {}
+    rpc SendData(stream DataPoint) returns (Empty) {}
     rpc SaveData(ResultDataPoint) returns (Empty) {}
 }
 
